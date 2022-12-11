@@ -20,24 +20,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Aqib</a>
           </li>
-         
         </ul>
-        <form class="d-flex" role="search" action="/" method="GET">
-          <input class="form-control me-2" name="city" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-      </div>
     </div>
   </nav>
-  <div class="container pt-5 pb-5">
+  <div class="container ">
   </div>
   <div class="container mt-4">
     <div class="mb-4">
+      <div class="card  rounded-3 shadow-sm border-dark">
+        <div class="card-header py-3 text-bg-dark border-dark">
+          <form class="d-flex" role="search" action="/" method="GET">
+            <input class="form-control me-2" name="city" type="search" placeholder="Search city to find temperature " aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+             
+        </div>
+      </div>
+    </div>
+    <div class="">
       <div class="card  rounded-3 shadow-sm border-primary">
         <div class="card-header py-3 text-bg-primary border-primary">
-          <h1 class="mb-4 text-center">Wheather for <%=ejsData.city %></h1>
+          <h1 class="text-center">Wheather for <%=ejsData.city %></h1>
+        </div>
+      </div>
     </div>
     <div class="mb-4">
     </div>
@@ -64,11 +71,11 @@
               <h4 class="my-0 fw-normal">Temprature</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+              <h1 class="card-title pricing-card-title"><%= ejsData?.temp%><small class="text-muted fw-light"> <spam>&#8451;</spam></small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Temprature is <span id="log_consile()"></span><%= ejsData?.temp%></li>
-                <li>Min Temprature is <span id="Min_temp"><%= ejsData?.min_temp%></span></li>
-                <li>Max Temprature is <span id="max_temp"></span></li>                
+                <li>Temprature is :<%= ejsData?.temp%></li>
+                <li>Min Temprature is :<%= ejsData?.min_temp%></li>
+                <li>Max Temprature is :<%= ejsData?.max_temp%></li>                
               </ul>
               <button type="button" class="w-100 btn btn-lg btn-primary">Temprature Info</button>
             </div>
@@ -80,11 +87,11 @@
               <h4 class="my-0 fw-normal">Humidity</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title"><small class="text-muted fw-light">% <%= ejsData?.temp%></small></h1>
+              <h1 class="card-title pricing-card-title"><%= ejsData?.humidity%><small class="text-muted fw-light"> %</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Wind Degrees is <span id="log_consile()"></span></li>
-                <li>Feels Like is <span id="log_consile()"></span></li>
-                <li>Humidity is <span id="log_consile()"></span></li>
+                <li>Wind Degree is :<%= ejsData?.wind_degrees%></li>
+                <li>Feels like is :<%= ejsData?.feels_like%></li>
+                <li>Humidity is :<%= ejsData?.humidity%></li>
               </ul>
               <button type="button" class="w-100 btn btn-lg btn-primary">Humidity Info </button>
             </div>
@@ -96,11 +103,11 @@
               <h4 class="my-0 fw-normal">Wind</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title"><small class="text-muted fw-light">km/hr</small></h1>
+              <h1 class="card-title pricing-card-title"><%= ejsData?.wind_speed%><small class="text-muted fw-light"> km/hr</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Wind Speed is <span id="log_consile()"></span></li>
-                <li>Sunrise Time is<span id="log_consile()"></span></li>
-                <li>Sunset Time is <span id="log_consile()"></span></li>
+                <li>Wind Speed is :<%= ejsData?.wind_speed%></li>
+                <li>Sunrise Time is :<%= ejsData?.sunrise%></li>
+                <li>Sunset Time is :<%= ejsData?.sunset%></li>
               </ul>
               <button type="button" class="w-100 btn btn-lg btn-primary">Wind Info</button>
             </div>
