@@ -24,8 +24,8 @@
           </li>
          
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" role="search" action="/" method="GET">
+          <input class="form-control me-2" name="city" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
       </div>
@@ -37,13 +37,25 @@
     <div class="mb-4">
       <div class="card  rounded-3 shadow-sm border-primary">
         <div class="card-header py-3 text-bg-primary border-primary">
-          <h1 class="mb-4 text-center">Wheather for Delhi</h1>
+          <h1 class="mb-4 text-center">Wheather for <%=ejsData.city %></h1>
     </div>
     <div class="mb-4">
     </div>
     <div class="mb-4">
 
     </div>
+    <!-- {
+      cloud_pct: 0,
+      temp: 22,
+      feels_like: 21,
+      humidity: 43,
+      min_temp: 22,
+      max_temp: 22,
+      wind_speed: 1.54,
+      wind_degrees: 270,
+      sunrise: 1670722424,
+      sunset: 1670759697
+    } -->
     <main>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
@@ -54,8 +66,8 @@
             <div class="card-body">
               <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>Temprature is <span id="log_consile()"></span><%= weatherData?.temp%></li>
-                <li>Min Temprature is <span id="Min_temp"</span></li>
+                <li>Temprature is <span id="log_consile()"></span><%= ejsData?.temp%></li>
+                <li>Min Temprature is <span id="Min_temp"><%= ejsData?.min_temp%></span></li>
                 <li>Max Temprature is <span id="max_temp"></span></li>                
               </ul>
               <button type="button" class="w-100 btn btn-lg btn-primary">Temprature Info</button>
@@ -68,7 +80,7 @@
               <h4 class="my-0 fw-normal">Humidity</h4>
             </div>
             <div class="card-body">
-              <h1 class="card-title pricing-card-title"><small class="text-muted fw-light">% <%= weatherData?.temp%></small></h1>
+              <h1 class="card-title pricing-card-title"><small class="text-muted fw-light">% <%= ejsData?.temp%></small></h1>
               <ul class="list-unstyled mt-3 mb-4">
                 <li>Wind Degrees is <span id="log_consile()"></span></li>
                 <li>Feels Like is <span id="log_consile()"></span></li>
